@@ -1,0 +1,12 @@
+.popup-gallery .col-auto {
+	flex-grow: 1;
+	height: 30vh;
+	margin-bottom: 30px;
+}
+
+.popup-gallery .col-auto img {
+	max-height: 100%;
+	min-width: 100%;
+	object-fit: cover;
+	vertical-align: bottom;
+}

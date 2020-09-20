@@ -1,45 +1,70 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title or metadata.title }}</title>
-    <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
-  </head>
-  <body>
-    <header>
-      <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      {#- Read more about `eleventy-navigation` at https://www.11ty.dev/docs/plugins/navigation/ #}
-      <ul class="nav">
-      {%- for entry in collections.all | eleventyNavigation %}
-        <li class="nav-item{% if entry.url == page.url %} nav-item-active{% endif %}"><a href="{{ entry.url | url }}">{{ entry.title }}</a></li>
-      {%- endfor %}
-      </ul>
-    </header>
+	<title>{{ title or metadata.title }}</title>
+	<meta name="description" content="{{ description or metadata.description }}">
 
-    <main{% if templateClass %} class="{{ templateClass }}"{% endif %}>
+	<meta property="og:url"                content="{{ metadata.url }}{{ page.url }}" />
+	<meta property="og:title"              content="{{ title or metadata.title }}" />
+	<meta property="og:description"        content="{{ description or metadata.description }}" />
+	<meta property="og:image"              content="{{ metadata.url }}/images/opengraph-the-muses.png" />
+	<meta property="og:image:width"        content="1000" />
+	<meta property="og:image:height"       content="525" />
 
-      <!-- Delete this message -->
-      <div class="warning">
-        <ol>
-          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
-          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
-          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
-        </ol>
-        <p><em>This is an <a href="https://www.11ty.dev/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
-      </div>
-      <!-- Stop deleting -->
+	{% if layout == "layouts/post.njk" %}
+		<meta property="og:type" content="article" />
+	{% else %}
+		<meta property="og:type" content="website" />
+	{% endif %}
 
-      {{ content | safe }}
-    </main>
 
-    <footer></footer>
+	<meta name="theme-color" content="#222222">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 
-    <!-- Current page: {{ page.url | url }} -->
-  </body>
+	<link rel="manifest" href="/manifest.json">
+	<link rel="icon" sizes="192x192" type="image/png" href="/images/icons/icon-192x192.png">
+	<link rel="apple-touch-icon" href="/images/icons/icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/images/icons/icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="192x192" href="/images/icons/icon-192x192.png">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+	<style>
+		{% set css %}
+		{% include "_includes/css/styles.css" %}
+		{% endset %}
+		{{ css | minifyCSS | safe }}
+	</style>
+
+</head>
+<body>
+
+{% include "_includes/header.njk" %}
+
+
+<main>
+	{{ content | safe }}
+</main>
+
+
+{% include "_includes/footer.njk" %}
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+{% if lightbox %}
+<script>
+	{% include "_includes/js/library-magnific-lightbox.js" %}
+	{% include "_includes/js/use-magnific-lightbox.js" %}
+</script>
+{% endif %}
+
+</body>
 </html>

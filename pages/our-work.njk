@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+permalink: /our-work/
+lightbox: true
+---
+
+
+<style>
+	{% include "_includes/css/library-magnific-lightbox.css" %}
+	{% include "_includes/css/use-magnific-lightbox.css" %}
+</style>
+
+
+<div class="page-bg page-bg-our-work">
+	<h1 class="mb-0">Our Work</h1>
+</div>
+
+<div class="container py-5">
+	<div class="popup-gallery row">
+		{% for item in gallery %}
+			<div class="col-auto">
+				<a href="/images/photo-gallery/{{ item }}.jpg" title="Photo">
+					<img src="/images/photo-gallery/{{ item }}.jpg" class="img-fluid d-inline-block" alt="construction photo {{ item }}">
+				</a>
+			</div><!-- end col -->
+		{% endfor %}
+	</div>
+</div><!-- end container -->

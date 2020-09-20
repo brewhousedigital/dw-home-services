@@ -1,0 +1,198 @@
+body {
+	font-size: 17px;
+}
+
+.secondary-footer {
+	max-width: 700px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.homepage-header-bg {
+	background-color: #222222;
+	background-image: url("/images/dwhs-homepage-header2-compressed.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.homepage-header-bg-subnav {
+	background-color: rgba(255,255,255,0.1);
+	padding: 10px 0;
+}
+
+.homepage-header-bg-subnav a {color: #fff; border: 1px solid transparent;}
+.homepage-header-bg-subnav a:hover {color: #fff; border: 1px solid #fff;}
+
+.homepage-header-bg-content {
+	text-align: center;
+	color: #fff;
+	padding: 90px 0;
+}
+
+.homepage-header-bg-content h2 {
+	font-size: 60px;
+}
+
+.homepage-header-bg-content p {
+	color: #ffc144;
+	font-size: 2rem;
+}
+
+
+.green-box {
+	background-color: #ffc144;
+	padding: 60px 0;
+}
+
+.green-box-title {
+	font-size: 24px;
+	font-weight: 600;
+}
+
+
+.homepage-footer {
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-color: #222;
+	background-image: url("/images/dwhs-homepage-steps-compressed.jpg");
+	padding: 60px 0;
+	color: #fff;
+}
+
+.homepage-footer i {
+	font-size: 75px;
+	color: #ffc144;
+}
+
+.homepage-footer-title {
+	font-weight: 900;
+	font-size: 22px;
+	color: #28a745;
+}
+
+
+nav {
+	padding: 15px 0;
+}
+
+nav .logo {
+	text-decoration: none!important;
+	display: inline-block;
+	font-size: 30px;
+	font-weight: 100;
+	color: #222222;
+	max-width: 175px;
+}
+
+nav .btn {
+	font-weight: 600;
+	font-size: 22px;
+}
+
+
+
+
+.header-contact-button a {
+	color: #28a745;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.page-bg {
+	background-color: #222;
+	background-position: center;
+	color: #fff;
+	padding: 60px 0;
+	background-size: cover;
+	background-attachment: fixed;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.page-bg-landscaping {background-image: url("/images/dwhs-landscaping-dark-compressed.jpg");}
+.page-bg-lawncare {background-image: url("/images/dwhs-our-landscaping-dark-compressed2.jpg");}
+.page-bg-home-improvement {background-image: url("/images/dwhs-home-improvement-dark-compressed.jpg");}
+.page-bg-remodel {background-image: url("/images/dwhs-remodelling-dark-compressed.jpg");}
+.page-bg-our-work {background-image: url("/images/dwhs-our-work-header-dark-compressed.jpg");}
+
+.page-bg h1 {
+	border-bottom: 1px solid rgba(238, 238, 238, 0.3);
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	display: inline-block;
+}
+
+.page-bg h2 {
+	margin: 0;
+}
+
+
+.footer-bar-cta {
+	background-color: #222;
+	background-image: url("/images/dwhs-homepage-steps-compressed.jpg");
+	padding: 60px 0;
+	color: #fff;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+.contact-us-bg {
+	background-image: url("/images/texarkana-map.png");
+	background-size: cover;
+	background-position: center;
+}
+
+
+
+/* Mobile Navigation Model */
+#mobile-navigation-modal {
+
+}
+
+#mobile-navigation-modal.modal {
+	opacity: 1;
+}
+
+#mobile-navigation-modal.modal.fade .modal-dialog {
+	transition: -webkit-transform .1s linear;
+	transition: transform .1s linear;
+	transition: transform .1s linear, -webkit-transform .1s linear;
+	-webkit-transform: translate(-300px, 0px);
+	transform: translate(-300px, 0px);
+}
+
+#mobile-navigation-modal.modal.show .modal-dialog {
+	-webkit-transform: none;
+	transform: none;
+}
+
+#mobile-navigation-modal .modal-dialog {
+	max-width: 300px;
+	margin: 0;
+}
+#mobile-navigation-modal .modal-content {
+	background-color: #f3f3f3;
+	border-radius: 0;
+	border: 0;
+	height: 100vh;
+}
+
+#mobile-navigation-modal .modal-header {
+	border-bottom: 0;
+}
+
+#mobile-navigation-modal .btn {
+	display: block;
+	width: 100%;
+	font-weight: 500;
+	padding: 16px 0;
+}
+
+
+
+.fa-icon svg {
+	width: 30px;
+}
